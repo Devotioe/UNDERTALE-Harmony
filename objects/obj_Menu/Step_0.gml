@@ -1,7 +1,7 @@
 var select_key = keyboard_check_pressed(vk_enter) || keyboard_check_pressed(ord("Z"));
 var quit_key = keyboard_check_pressed(vk_shift) || keyboard_check_pressed(ord("X"));
 
-//setup
+//------Setup Menu-----
 if (global.BattleMenu = MENU.SETUP){
 	global.PriorityBar = 0;
 	var enemyCounts = array_length(global.Enemy);
@@ -101,7 +101,7 @@ if (global.BattleMenu = MENU.SETUP){
 	global.BattleMenu = MENU.SELECTION; //turn of the switch
 }
 
-//For texts that change dynamically
+//------For texts that change dynamically------
 if (global.BattleMenu > MENU.SELECTION){
 	Page.TextToDraw = "Page " + string(ItemPage);
 	for ( var i = 0 ; i < array_length(global.Enemy[global.EnemyRN].Act) ; i +=2){
@@ -114,7 +114,8 @@ if (global.BattleMenu > MENU.SELECTION){
 	ActML.TextLength = string_length(ActML.TextToDraw);
 }
 
-//init every frame, make evey menu invisible
+//-------Init every frame, make evey menu invisible------
+#region
 PlayerDialogue.visible = false;
 Fight.visible = false;
 Act.visible = false;
@@ -126,8 +127,9 @@ ItemL_2.visible = false;
 ItemR_2.visible = false;
 Page.visible = false;
 Mercy.visible = false;
+#endregion
 
-//make certain manu visible according to menu status
+//------Certain menus appear according to global.BattleMenu------
 switch (global.BattleMenu){ 
 	case MENU.SELECTION:
 	if (global.bulletboard.current_l < 40 || global.bulletboard.current_r > 600){
@@ -162,7 +164,7 @@ switch (global.BattleMenu){
 	break;
 }
 
-//advancing Menu
+//------Advancing Menu-----
 if select_key && global.UISelection > -1 {
 	
 	switch global.BattleMenu { 
@@ -232,7 +234,7 @@ if select_key && global.UISelection > -1 {
 	}
 }
 
-//quitting menu
+//------Quitting Menu-----
 if quit_key && global.UISelection > -1{
 	if (global.BattleMenu = MENU.FIGHT || global.BattleMenu = MENU.ACT || global.BattleMenu = MENU.INVENTORY || global.BattleMenu = MENU.MERCY){
 		global.BattleMenu = MENU.SELECTION;

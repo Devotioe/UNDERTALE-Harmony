@@ -1,10 +1,13 @@
 switch state {
 	
 	case BATTLE_STATE.ACTION:
+	//If ActionText object doesn't exist anymore, the 
+	
 	
 	if !instance_exists(global.Menu.ActionText){
 		global.Enemy[0].alarm[0] = 1;
 	}
+	
 	break;
 
 	case BATTLE_STATE.DIALOGUE:
@@ -19,7 +22,4 @@ switch state {
 	}
 	break;
 	
-	//test git
-	//test git2
-	//test git3
 }

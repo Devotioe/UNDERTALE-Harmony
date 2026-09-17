@@ -13,10 +13,10 @@ enum MENU {
 }
 
 enum BATTLE_STATE {
-	PLAYER,
-	ACTION,
-	DIALOGUE,
-	BATTLE,
+	PLAYER, //Player's turn, involving fight, act, item, mercy, etc.
+	ACTION, //This state involves the process of player's actions, including attack animations, item messages, etc.
+	DIALOGUE, //This state involves the dialogue of enemies, basically bubbles.
+	BATTLE, //The state where the enemies are attacking, the name should be changed later.
 }
 
 global.player = -1
