@@ -9,14 +9,32 @@ enum MENU {
 	INVENTORY, //3
 	MERCY, //4
 	HIDE, //5
-	ACT_SELECTION, //6
+	ACT_SELECTION, //6 for selecting act targets
+	
+	//NEW, for spell and magic system (player)
+	SPELL, //Selecting spells, e.g. healing, elements spells, boost spells...
+	SPELL_SELECTION, //for selecting spell targets, e.g. enemies
 }
 
 enum BATTLE_STATE {
-	PLAYER, //Player's turn, involving fight, act, item, mercy, etc.
-	ACTION, //This state involves the process of player's actions, including attack animations, item messages, etc.
-	DIALOGUE, //This state involves the dialogue of enemies, basically bubbles.
-	BATTLE, //The state where the enemies are attacking, the name should be changed later.
+	//OLD
+	// PLAYER, //Player's turn, involving fight, act, item, mercy, etc.
+	// ACTION, //This state involves the process of player's actions, including attack animations, item messages, etc.
+	// DIALOGUE, //This state involves the dialogue of enemies, basically bubbles.
+	// BATTLE, //The state where the enemies are attacking, the name should be changed later.
+	
+	//NEW
+	PlayerTurn, //Player chooses actions
+	PlayerAttack, //battle target + attack animation
+	PlayerAction,  //item, act, mercy...
+	DamageCalculation, //damage calculation + hurt animation
+	EnemyCheck, //Check enemy status, flags, dialogue queue
+	EnemyDialogue, //enemy dialogues
+	EnemyAttack, //enemy attacking phase
+	EnemyDeathMessage, //Death Message
+	BattleEnd, //End battle
+	RewardCalculation, //Final calculation, exp, gold, lv...
+	GameOver, //player death, end battle, to game_over screen
 }
 
 global.player = -1
