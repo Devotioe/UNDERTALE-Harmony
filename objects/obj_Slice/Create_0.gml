@@ -1,1 +1,0 @@
-global.Enemy[global.EnemyRN].alarm[4] = 1;

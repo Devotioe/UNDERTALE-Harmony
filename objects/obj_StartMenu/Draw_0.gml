@@ -1,1 +1,0 @@
-if state == 0 draw_sprite(spr_ourheart, 0, 70, 115 + global.UISelection * 100);

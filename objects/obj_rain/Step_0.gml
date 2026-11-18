@@ -1,1 +1,0 @@
-instance_create_depth(random_range(-400, 500), random_range(0, - 10), -9, obj_raindrop);
