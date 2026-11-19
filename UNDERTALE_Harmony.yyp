@@ -1,6 +1,6 @@
 {
   "$GMProject":"v1",
-  "%Name":"UNDERTALE-Harmony",
+  "%Name":"UNDERTALE_Harmony",
   "AudioGroups":[
     {"$GMAudioGroup":"v1","%Name":"audiogroup_default","exportDir":"","name":"audiogroup_default","resourceType":"GMAudioGroup","resourceVersion":"2.0","targets":-1,},
   ],
@@ -58,7 +58,7 @@
   "MetaData":{
     "IDEVersion":"2026.1.0.27",
   },
-  "name":"UNDERTALE-Harmony",
+  "name":"UNDERTALE_Harmony",
   "resources":[
     {"id":{"name":"fnt_Battle_DamageUI","path":"fonts/fnt_Battle_DamageUI/fnt_Battle_DamageUI.yy",},},
     {"id":{"name":"fnt_Battle_HPfont","path":"fonts/fnt_Battle_HPfont/fnt_Battle_HPfont.yy",},},
